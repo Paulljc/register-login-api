@@ -24,3 +24,10 @@
 - gravatar 全球公认头像，Gravatar是一图像跟随著您到访过的网站，当您在博客中留言或发表文章，它将会出现在您的名称旁。
 
 - bcrypt 用于密码加密。
+
+### 使用
+
+`npm/cnpm install ` 安装依赖
+`npm run start`	  启动项目  /  `npm run server` 使用nodemon启动项目(热更新)，注意需要全局安装该模块
+
+#### 测试
