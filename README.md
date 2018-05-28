@@ -25,6 +25,7 @@
 
 - bcrypt 用于密码加密。
 
+---
 ### 使用
 
 
@@ -32,4 +33,18 @@
 
 `npm run start`	  启动项目  /  `npm run server` 使用nodemon启动项目(热更新)，注意需要全局安装该模块
 
+---
 #### 测试
+###### 使用postman对注册登录以及私有接口进行测试
+
+注册 / register
+
+![register](testImg/register.PNG)
+
+登录 / login
+
+![login](testImg/login.PNG)
+
+当前用户 / current (注意验证jwt需要把token放在请求头中的Authorization中)
+
+![current](testImg/current.PNG)
