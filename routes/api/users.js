@@ -14,14 +14,14 @@ const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 // $route  GET api/users/test
-// @desc   返回的请求的json数据
+// @desc   测试接口
 // @access public
 router.get("/test",(req,res) => {
-    res.json({msg:"login works"})
+    res.json({msg:"it works"})
 })
 
 // $route  POST api/users/register
-// @desc   返回的请求的json数据
+// @desc   注册接口 返回的注册的json数据
 // @access public
 router.post("/register",(req,res) => {
 
@@ -46,11 +46,12 @@ router.post("/register",(req,res) => {
                     avatar,
                     password:req.body.password
                 })
-
+                
+                // 对密码进行加密
                 bcrypt.genSalt(10, function(err, salt) {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
                         if(err) throw err;
-
+                        // 生成的 hash 作为密码存入
                         newUser.password = hash;
 
                         newUser.save()
@@ -58,14 +59,12 @@ router.post("/register",(req,res) => {
                             .catch(err => console.log(err));
                     });
                 });
-
-
             }
         })
 })
 
 // $route  POST api/users/login
-// @desc   返回token jwt passport
+// @desc   登录接口 返回token jwt passport
 // @access public
 
 router.post("/login",(req,res) => {
@@ -108,8 +107,8 @@ router.post("/login",(req,res) => {
 })
 
 // $route  GET api/users/current
-// @desc   return current user
-// @access Private
+// @desc   测试token验证 返回 current user
+// @access Private (私有接口 需要权限)
 router.get("/current",passport.authenticate('jwt', { session: false }),(req,res) => {
     res.json({
         id:req.user.id,
