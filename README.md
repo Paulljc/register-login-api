@@ -5,7 +5,7 @@
 考虑到在实际项目中，注册和登录功能是比较常见的，所以就学了一些登录验证之类的库。
 用 node.js + express 写写代码练练手，大家也可以学习学习，说不定工作中能用上。
 
-#### 项目用到的的第三方库
+#### 项目用到的第三方库
 
 - jsonwebtoken 生成token验证字符串，Token中的payload是通过base64url编码的。具体可以参考我简书写的文章[jsonwebtoken](https://www.jianshu.com/p/f7e7b056f43d) (附中文文档)。
  
